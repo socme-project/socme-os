@@ -1,5 +1,5 @@
 { config, ... }:
-let domain = "opensoc.anotherhadi.com";
+let domain = "headscale.socme.wiki";
 in {
   services = {
     headscale = {
@@ -9,7 +9,7 @@ in {
       settings = {
         server_url = "https://${domain}";
         logtail.enabled = false;
-        dns.base_domain = "opensoc.com";
+        dns.base_domain = "socme.wiki";
       };
     };
 
