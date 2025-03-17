@@ -21,7 +21,7 @@
     username = "admin";
     password = "HMthisismys3cr3tP5ssword34a;";
   };
-  # programs.suricata = { enable = true; };
+  programs.suricata = { enable = true; };
   # headtails/tailscale
 
   # Don't touch this
