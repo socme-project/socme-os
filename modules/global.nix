@@ -11,6 +11,7 @@
     vim
     git
     ripgrep
+    just
     tldr
   ];
 

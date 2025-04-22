@@ -84,16 +84,14 @@
       rule-files = [ "*.rules" ];
     };
   };
-     # headtails/tailscale
+
+  # headtails/tailscale
   services.nginx = {
     enable = true;
-    virtualHosts."localhost.local" = {
-    };
+    virtualHosts."localhost.local" = { };
   };
-  
+
   networking.firewall.allowedTCPPorts = [ 80 443 ];
-
-
 
   # Don't touch this
   system.stateVersion = "24.05";
