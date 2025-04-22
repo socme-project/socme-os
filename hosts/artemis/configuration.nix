@@ -21,12 +21,13 @@
     username = "admin";
     password = "HMthisismys3cr3tP5ssword34a;";
   };
+
   services.suricata = {
     enable = true;
     settings = {
       vars.address-groups.HOME_NET = "192.168.1.0/24";
     
-      # Replace pcap with af-packet for better performance
+      # Use af-packet instead of pcap for better performance
       af-packet = [{ 
         interface = "ens19";
         cluster-id = 99;
@@ -37,7 +38,6 @@
       # Fix the logging configuration structure
       logging = {
         default-log-level = "notice";
-        # Correct structure for logging outputs
         console = {
           enabled = true;
         };
@@ -47,8 +47,8 @@
           level = "info";
         };
       };
-      
-      # Configure outputs correctly
+    
+      # Configure outputs with absolute paths
       outputs = [
         {
           fast = {
@@ -62,8 +62,9 @@
             enabled = true;
             filetype = "regular";
             filename = "/var/log/suricata/eve.json";
+            community-id = true;  # Keep this from the other version
             types = [
-              { alert = {}; }
+              { alert = { tagged-packets = "yes"; }; }  # Combine the alert settings
               { http = {}; }
               { dns = {}; }
               { tls = {}; }
