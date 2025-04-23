@@ -86,7 +86,7 @@
     };
   };
 
-  # headtails/tailscale
+  # headtail/tailscale
   services.nginx = {
     enable = true;
     virtualHosts."localhost.local" = { };
