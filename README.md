@@ -1,6 +1,6 @@
 # SOCME-OS
 
-SOCME-OS is a submodule of SOCME, containing the NixOS configurations for both the Node and Core.
+SOCME-OS is a submodule of SOCME, containing the NixOS configurations for both Node and Core.
 
 ## Table of Contents
 
