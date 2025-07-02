@@ -6,7 +6,7 @@
   };
 
   # Restrict who can use the Nix package manager
-  nix.settings.allowed-users = [ "root" "zeus" ];
+  nix.settings.allowed-users = [ "root" "core" ];
 
   boot.kernel.sysctl = {
     # Prevent unprivileged users from accessing or modifying named pipes (FIFOs)

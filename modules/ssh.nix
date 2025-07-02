@@ -11,10 +11,10 @@
     '';
     settings = {
       PasswordAuthentication = false;
-      AllowUsers = [ "zeus" ]; # or null for all users
+      AllowUsers = [ "core" ]; # or null for all users
       PermitRootLogin = "no";
     };
   };
 
-  networking.firewall.allowedTCPPorts = [22 ];
+  networking.firewall.allowedTCPPorts = [ 22 ];
 }

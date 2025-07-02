@@ -14,7 +14,7 @@
     ./hardware-configuration.nix
   ];
 
-  networking.hostName = "Artemis-Dev";
+  networking.hostName = "Node-Dev";
 
   programs.wazuh = {
     enable = true;

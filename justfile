@@ -1,5 +1,5 @@
-# New Artemis
-# New Zeus
+# New Node
+# New Core
 
 update: pull rebuild
 

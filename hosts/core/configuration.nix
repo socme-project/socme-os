@@ -16,7 +16,7 @@
     ./hardware-configuration.nix
   ];
 
-  networking.hostName = "Zeus-Dev";
+  networking.hostName = "Core-Dev";
 
   # Don't touch this
   system.stateVersion = "24.05";

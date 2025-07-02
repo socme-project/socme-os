@@ -2,10 +2,10 @@
   programs.zsh.enable = true;
   users = {
     defaultUserShell = pkgs.zsh;
-    users.zeus = {
+    users.core = {
       isNormalUser = true;
-      home = "/home/zeus";
-      description = "zeus OpenSOC account";
+      home = "/home/core";
+      description = "core SOCme account";
       extraGroups = [ "wheel" "networkmanager" "docker" ];
 
       # OpenSOC public key
@@ -14,5 +14,5 @@
       ];
     };
   };
-  nix.settings.allowed-users = [ "zeus" ];
+  nix.settings.allowed-users = [ "core" ];
 }

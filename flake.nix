@@ -1,5 +1,5 @@
 {
-  description = "OpenSOC";
+  description = "SOCme";
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
@@ -10,20 +10,20 @@
   outputs = inputs@{ nixpkgs, ... }: {
     nixosConfigurations = {
 
-      artemis = nixpkgs.lib.nixosSystem {
+      node = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         modules = [
           { _module.args = { inherit inputs; }; }
           inputs.wazuh.nixosModules.wazuh
-          ./hosts/artemis/configuration.nix
+          ./hosts/node/configuration.nix
         ];
       };
 
-      zeus = nixpkgs.lib.nixosSystem {
+      core = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         modules = [
           { _module.args = { inherit inputs; }; }
-          ./hosts/zeus/configuration.nix
+          ./hosts/core/configuration.nix
         ];
       };
 

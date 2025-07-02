@@ -1,6 +1,13 @@
 # SOCME-OS
 
-SOCME-OS is a submodule of SOCME, containing the NixOS configurations for both the Artemis and Zeus.
+SOCME-OS is a submodule of SOCME, containing the NixOS configurations for both the Node and Core.
+
+## Table of Contents
+
+- [Table of Contents](#table-of-contents)
+- [Architecture](#architecture)
+  - [💻 /hosts](#-hosts)
+  - [📦 /modules](#-modules)
 
 ## Architecture
 
@@ -14,3 +21,5 @@ The directory contains host-specific configurations. Each host includes:
 ### 📦 /modules
 
 These are configurable modules that can be used across different hosts (fetch, ssh, etc.)
+
+## Installation

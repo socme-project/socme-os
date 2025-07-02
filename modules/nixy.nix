@@ -8,10 +8,10 @@ let
     # bash
     ''
       hostname=""
-      if [[ ${hostname} == "Artemis-"* ]];then
-        hostname="artemis"
-      elif [[ ${hostname} == "Zeus-"* ]];then
-        hostname="zeus"
+      if [[ ${hostname} == "Node-"* ]];then
+        hostname="node"
+      elif [[ ${hostname} == "Core-"* ]];then
+        hostname="core"
       elif [[ ${hostname} == "Hermes-"* ]];then
         hostname="hermes"
       else
