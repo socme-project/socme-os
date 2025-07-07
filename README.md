@@ -25,9 +25,9 @@ These are configurable modules that can be used across different hosts (fetch, s
 ## Installation
 
 1. Clone the repository:
-`git clone https://github.com/socme-project/socme-os ~/.config/nixos`
+`git clone https://github.com/socme-project/socme-os`
 2. Update `variables.nix` with your device settings.
 3. Copy your `/etc/hardware-configuration.nix` to `hosts/<hostname>/hardware-configuration.nix`.
 4. Build the system:
-`sudo nixos-rebuild switch --flake ~/.config/nixos#yourhostname`
+`sudo nixos-rebuild switch --flake /etc/nixos#yourhostname`
 5. Reboot your system.
