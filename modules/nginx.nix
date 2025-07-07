@@ -36,11 +36,11 @@
           try_files $uri $uri/ /index.html =404; # Fallback vers index.html pour les routes SPA
         '';
       };
-      networking.extraHosts = ''
-        127.0.0.1 socme.dashboard
-      '';
     };
-
-
   };
+
+  networking.extraHosts = ''
+    127.0.0.1 socme.dashboard
+  '';
+
 }
