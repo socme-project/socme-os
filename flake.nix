@@ -5,7 +5,7 @@
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     neve.url = "github:redyf/Neve";
     socme.url = "github:socme-project/socme";
-    wazuh.url = "github:socme-project/wazuh-nix";
+    wazuh.url = "github:anotherhadi/wazuh-nix";
   };
 
   outputs = inputs@{ nixpkgs, ... }: {
