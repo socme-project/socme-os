@@ -53,13 +53,23 @@ let
       [[ $1 == "" ]] && ui
 
       if [[ $1 == "rebuild" ]];then
-        sudo nixos-rebuild switch --flake ${configDirectory}#$hostname
+        cd ${configDirectory} && git add . && sudo nixos-rebuild switch --flake ${configDirectory}#${hostname}
       elif [[ $1 == "upgrade" ]];then
-        sudo nixos-rebuild switch --upgrade --flake '${configDirectory}#$hostname'
+        cd ${configDirectory} && git add . && sudo nixos-rebuild switch --upgrade --flake ${configDirectory}#${hostname}
       elif [[ $1 == "update" ]];then
-        cd ${configDirectory} && sudo nix flake update
+        cd ${configDirectory} && nix flake update
       elif [[ $1 == "gc" ]];then
-        cd ${configDirectory} && sudo nix-collect-garbage -d
+        echo "Starting Nix garbage collection..."
+        cd ${configDirectory} && \
+        echo "Cleaning up system generations..." && \
+        sudo nix-collect-garbage -d && \
+        echo "Cleaning up user generations..." && \
+        nix-collect-garbage -d && \
+        echo "Collecting garbage from Nix store..." && \
+        nix-store --gc && \
+        echo "Optimizing Nix store..." && \
+        nix-store --optimise
+        echo "Nix garbage collection complete."
       elif [[ $1 == "cb" ]];then
         sudo /run/current-system/bin/switch-to-configuration boot
       else
