@@ -1,4 +1,4 @@
-{ pkgs, inputs, ... }: {
+{ ... }: {
   imports = [
     ../../modules/firewall.nix
     ../../modules/global.nix

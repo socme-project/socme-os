@@ -4,7 +4,8 @@
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     neve.url = "github:redyf/Neve";
-    wazuh.url = "github:anotherhadi/wazuh-nix";
+    socme.url = "github:socme-project/socme";
+    wazuh.url = "github:socme-project/wazuh-nix";
   };
 
   outputs = inputs@{ nixpkgs, ... }: {
@@ -23,6 +24,7 @@
         system = "x86_64-linux";
         modules = [
           { _module.args = { inherit inputs; }; }
+          inputs.socme.nixosModules.socme-backend
           ./hosts/core/configuration.nix
         ];
       };

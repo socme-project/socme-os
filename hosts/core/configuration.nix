@@ -1,4 +1,4 @@
-{ pkgs, inputs, ... }: {
+{ ... }: {
   imports = [
     ../../modules/firewall.nix
     ../../modules/global.nix
@@ -10,6 +10,8 @@
     ../../modules/users.nix
     ../../modules/fail2ban.nix
     ../../modules/nixy.nix
+    ../../modules/nginx.nix
+    ../../modules/socme.nix
 
     ./headscale.nix
 
