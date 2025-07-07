@@ -13,7 +13,7 @@
     ../../modules/nginx.nix
     ../../modules/socme.nix
 
-    ./headscale.nix
+    #./headscale.nix
 
     ./hardware-configuration.nix
   ];
