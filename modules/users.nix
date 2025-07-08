@@ -2,10 +2,10 @@
   programs.zsh.enable = true;
   users = {
     defaultUserShell = pkgs.zsh;
-    users.core = {
+    users.socme = {
       isNormalUser = true;
-      home = "/home/core";
-      description = "core SOCme account";
+      home = "/home/socme";
+      description = "SOCme account";
       extraGroups = [ "wheel" "networkmanager" "docker" ];
 
       # OpenSOC public key
@@ -14,5 +14,5 @@
       ];
     };
   };
-  nix.settings.allowed-users = [ "core" ];
+  nix.settings.allowed-users = [ "socme" ];
 }

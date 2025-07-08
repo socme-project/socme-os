@@ -25,6 +25,9 @@ These are configurable modules that can be used across different hosts (fetch, s
 ## Installation
 
 1. [Download](https://nixos.org/download/) and [install](https://nixos.wiki/wiki/NixOS_Installation_Guide) NixOS.
+During the installation, create a user named `socme` as such :
+
+![setup](src/setup.png)
 
 2. Install git and vim temporarily to clone the repository and edit files:
 
