@@ -18,8 +18,7 @@ fi
 
 echo "Removing existing /etc/nixos..."
 sudo rm -rf /etc/nixos || {
-  echo "Error: Failed to remove /etc/nixos." >&2
-  exit 1
+  echo "Error: Failed to remove /etc/nixos."
 }
 
 echo "Cloning NixOS configuration repository..."
