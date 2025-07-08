@@ -24,10 +24,29 @@ These are configurable modules that can be used across different hosts (fetch, s
 
 ## Installation
 
-1. Clone the repository:
-`git clone https://github.com/socme-project/socme-os`
-2. Update `variables.nix` with your device settings.
-3. Copy your `/etc/hardware-configuration.nix` to `hosts/<hostname>/hardware-configuration.nix`.
-4. Build the system:
-`sudo nixos-rebuild switch --flake /etc/nixos#yourhostname`
-5. Reboot your system.
+1. [Download](https://nixos.org/download/) and [install](https://nixos.wiki/wiki/NixOS_Installation_Guide) NixOS.
+
+2. Install git and vim temporarily to clone the repository and edit files:
+
+```sh
+nix-shell -p git vim
+```
+
+3. Clone the repository:
+
+```sh
+sudo rm -rf /etc/nixos && sudo git clone https://github.com/socme-project/socme-os /etc/nixos
+```
+
+4. Update `configuration.nix` with your desired settings.
+5. Run the following command to add the hardware configuration for your host:
+
+```sh
+sudo bash -c 'nixos-generate-config --show-hardware-config > /etc/nixos/hosts/<node|core>/hardware-configuration.nix'
+```
+
+6. Build the system:
+
+```sh
+sudo nixos-rebuild switch --flake /etc/nixos#<node|core>
+```
