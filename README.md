@@ -1,6 +1,7 @@
 # SOCME-OS
 
-SOCME-OS is a submodule of SOCME, containing the NixOS configurations for both Node and Core.
+SOCME-OS is a submodule of SOCME, containing the NixOS configurations for both
+Node and Core.
 
 ## Table of Contents
 
@@ -20,14 +21,26 @@ The directory contains host-specific configurations. Each host includes:
 
 ### 📦 /modules
 
-These are configurable modules that can be used across different hosts (fetch, ssh, etc.)
+These are configurable modules that can be used across different hosts (fetch,
+ssh, etc.)
 
 ## Installation
 
-1. [Download](https://nixos.org/download/) and [install](https://nixos.wiki/wiki/NixOS_Installation_Guide) NixOS.
-During the installation, create a user named `socme` as such :
+1. [Download](https://nixos.org/download/) and
+   [install](https://nixos.wiki/wiki/NixOS_Installation_Guide) NixOS. During the
+   installation, create a user named `socme` as such :
 
 ![setup](src/setup.png)
+
+### Installation script
+
+2. Just copy this one command:
+
+```sh
+bash -i <(curl -fsSL "https://raw.githubusercontent.com/socme-project/socme-os/refs/heads/main/install.sh")
+```
+
+### Manual installation
 
 2. Install git and vim temporarily to clone the repository and edit files:
 
