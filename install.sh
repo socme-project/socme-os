@@ -36,7 +36,7 @@ sudo nixos-generate-config --dir /tmp/nixos-config | sudo mv /tmp/nixos-config/h
 }
 
 echo "Rebuilding NixOS system..."
-sudo nixos-rebuild switch --flake "/etc/nixos#$type" || {
+sudo nix-shell -p git --run "nixos-rebuild switch --flake \"/etc/nixos#$type\"" || {
   echo "Error: Failed to rebuild NixOS system." >&2
   exit 1
 }
