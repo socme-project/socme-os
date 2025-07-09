@@ -30,7 +30,7 @@ sudo nix-shell -p git --run "git clone https://github.com/socme-project/socme-os
 
 echo "Generating hardware configuration..."
 # Use sudo with tee to handle redirection as root
-sudo nixos-generate-config --dir /tmp/nixos-config | sudo mv /tmp/nixos-config/hardware-configuration.nix /etc/nixos/hosts/${type}/hardware-configuration.nix || {
+sudo nixos-generate-config --dir /tmp/nixos-config && sudo mv /tmp/nixos-config/hardware-configuration.nix /etc/nixos/hosts/${type}/hardware-configuration.nix || {
   echo "Error: Failed to generate hardware configuration." >&2
   exit 1
 }
