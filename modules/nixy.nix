@@ -8,6 +8,7 @@ let
     # bash
     ''
       hostname=""
+      #CHANGEME: does not work
       if [[ ${hostname} == "Node-"* ]];then
         hostname="node"
       elif [[ ${hostname} == "Core-"* ]];then
