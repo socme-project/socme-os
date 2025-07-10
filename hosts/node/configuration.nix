@@ -10,6 +10,7 @@
     ../../modules/users.nix
     ../../modules/fail2ban.nix
     ../../modules/nixy.nix
+    ../../modules/tailscale.nix
 
     ./hardware-configuration.nix
   ];
