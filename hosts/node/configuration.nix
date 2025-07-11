@@ -12,6 +12,7 @@
     ../../modules/nixy.nix
     ../../modules/tailscale.nix
     ../../modules/nvf
+    ../../modules/wazuh.nix
 
     ./hardware-configuration.nix
   ];
