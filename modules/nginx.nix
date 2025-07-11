@@ -9,7 +9,7 @@
     virtualHosts."dashboard.socme.wiki" = {
       root = "${
         inputs.socme.packages.${pkgs.system}.socme-frontend
-      }/share/socme-frontend";
+      }/socme-frontend";
 
       locations."/api/" = {
         proxyPass = "http://127.0.0.1:${toString config.services.socme-backend.port}/";
