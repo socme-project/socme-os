@@ -11,6 +11,7 @@
     ../../modules/fail2ban.nix
     ../../modules/nixy.nix
     ../../modules/tailscale.nix
+    ../../modules/nvf
 
     ./hardware-configuration.nix
   ];

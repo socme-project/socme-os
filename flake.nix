@@ -3,7 +3,6 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-    neve.url = "github:redyf/Neve";
     socme.url = "github:socme-project/socme";
   };
 

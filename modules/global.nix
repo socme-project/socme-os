@@ -1,6 +1,9 @@
-{ inputs, pkgs, ... }: {
+{
+  inputs,
+  pkgs,
+  ...
+}: {
   environment.systemPackages = with pkgs; [
-    inputs.neve.packages.${system}.default
     fd
     bc
     gcc
