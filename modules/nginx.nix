@@ -1,15 +1,18 @@
-{ config, inputs, pkgs, ... }: {
+{
+  config,
+  inputs,
+  pkgs,
+  ...
+}: {
   services.nginx = {
     enable = true;
-    virtualHosts."socme.dashboard" = {
-
+    virtualHosts."dashboard.socme.wiki" = {
       root = "${
-          inputs.socme.packages.${pkgs.system}.socme-frontend
-        }/share/socme-frontend";
+        inputs.socme.packages.${pkgs.system}.socme-frontend
+      }/share/socme-frontend";
 
       locations."/api/" = {
-        proxyPass =
-          "http://127.0.0.1:${toString config.services.socme-backend.port}/";
+        proxyPass = "http://127.0.0.1:${toString config.services.socme-backend.port}/";
         recommendedProxySettings = true;
         extraConfig = ''
           rewrite ^/api/(.*) /$1 break;
@@ -38,9 +41,4 @@
       };
     };
   };
-
-  networking.extraHosts = ''
-    127.0.0.1 socme.dashboard
-  '';
-
 }
