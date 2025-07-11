@@ -64,3 +64,5 @@ sudo bash -c 'nixos-generate-config --show-hardware-config > /etc/nixos/hosts/<n
 ```sh
 sudo nixos-rebuild switch --flake /etc/nixos#<node|core>
 ```
+
+7. Reboot and login as `socme` with the `secret` password.
