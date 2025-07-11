@@ -1,14 +1,15 @@
-{ pkgs, config, inputs, ... }:
-let
-
+{
+  pkgs,
+  config,
+  ...
+}: let
   configDirectory = "/etc/nixos";
   hostname = config.networking.hostName;
 
-  nixy = pkgs.writeShellScriptBin "nixy"
+  nixy =
+    pkgs.writeShellScriptBin "nixy"
     # bash
     ''
-      hostname=""
-      #CHANGEME: does not work
       if [[ ${hostname} == "Node-"* ]];then
         hostname="node"
       elif [[ ${hostname} == "Core-"* ]];then
@@ -54,9 +55,9 @@ let
       [[ $1 == "" ]] && ui
 
       if [[ $1 == "rebuild" ]];then
-        cd ${configDirectory} && sudo git add . && sudo nixos-rebuild switch --flake ${configDirectory}#${hostname}
+        cd ${configDirectory} && sudo git add . && sudo nixos-rebuild switch --flake ${configDirectory}#$hostname
       elif [[ $1 == "upgrade" ]];then
-        cd ${configDirectory} && sudo git add . && sudo nixos-rebuild switch --upgrade --flake ${configDirectory}#${hostname}
+        cd ${configDirectory} && sudo git add . && sudo nixos-rebuild switch --upgrade --flake ${configDirectory}#$hostname
       elif [[ $1 == "update" ]];then
         cd ${configDirectory} && sudo nix flake update
       elif [[ $1 == "gc" ]];then
@@ -77,5 +78,4 @@ let
         echo "Unknown argument"
       fi
     '';
-
-in { environment.systemPackages = with pkgs; [ nixy ]; }
+in {environment.systemPackages = with pkgs; [nixy];}
