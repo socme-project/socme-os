@@ -1,7 +1,9 @@
 # SOCME-OS
 
 SOCME-OS is a submodule of SOCME, containing the NixOS configurations for both
-Node and Core.
+Node and Core. 
+
+To deploy the frontend, Core should have an x86-64-v3 architecture.
 
 ## Table of Contents
 
