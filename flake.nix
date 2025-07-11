@@ -4,6 +4,9 @@
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     socme.url = "github:socme-project/socme";
+    nvf = {
+      url = "github:notashelf/nvf";
+    };
   };
 
   outputs = inputs @ {nixpkgs, ...}: {
