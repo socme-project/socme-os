@@ -1,5 +1,5 @@
-{ pkgs, ... }: {
-  environment.systemPackages = with pkgs; [ eza bat zoxide ];
+{pkgs, ...}: {
+  environment.systemPackages = with pkgs; [eza bat zoxide lazygit];
   programs = {
     zsh = {
       enable = true;
@@ -47,5 +47,4 @@
     };
     starship.enable = true;
   };
-
 }
