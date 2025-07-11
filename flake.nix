@@ -5,17 +5,14 @@
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     neve.url = "github:redyf/Neve";
     socme.url = "github:socme-project/socme";
-    wazuh.url = "github:anotherhadi/wazuh-nix";
   };
 
-  outputs = inputs@{ nixpkgs, ... }: {
+  outputs = inputs @ {nixpkgs, ...}: {
     nixosConfigurations = {
-
       node = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         modules = [
-          { _module.args = { inherit inputs; }; }
-          inputs.wazuh.nixosModules.wazuh
+          {_module.args = {inherit inputs;};}
           ./hosts/node/configuration.nix
         ];
       };
@@ -23,12 +20,11 @@
       core = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         modules = [
-          { _module.args = { inherit inputs; }; }
+          {_module.args = {inherit inputs;};}
           inputs.socme.nixosModules.socme-backend
           ./hosts/core/configuration.nix
         ];
       };
-
     };
   };
 }
