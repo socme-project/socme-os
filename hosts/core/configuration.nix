@@ -12,6 +12,7 @@
     ../../modules/nixy.nix
     ../../modules/nginx.nix
     ../../modules/socme.nix
+    ../../modules/tailscale.nix
 
     #./headscale.nix
 

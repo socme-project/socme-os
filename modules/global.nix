@@ -13,6 +13,7 @@
     ripgrep
     just
     tldr
+    tailscale
   ];
 
   console.keyMap = "fr";
