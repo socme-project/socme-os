@@ -1,10 +1,15 @@
-{pkgs, ...}: {
-  environment.systemPackages = with pkgs; [eza bat zoxide lazygit];
+{ pkgs, ... }: {
+  environment.systemPackages = with pkgs; [ eza bat zoxide lazygit ];
   programs = {
     zsh = {
       enable = true;
       enableCompletion = true;
       histSize = 10000;
+
+      shellInit = ''
+        bindkey -e
+        eval "$(zoxide init zsh)"
+      '';
 
       shellAliases = {
         vim = "nvim";
