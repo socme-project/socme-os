@@ -6,13 +6,6 @@
       enableCompletion = true;
       histSize = 10000;
 
-      initContent =
-        #bash
-        ''
-          bindkey -e
-          eval "$(zoxide init zsh)"
-        '';
-
       shellAliases = {
         vim = "nvim";
         vi = "nvim";
