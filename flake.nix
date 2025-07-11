@@ -12,6 +12,7 @@
         system = "x86_64-linux";
         modules = [
           {_module.args = {inherit inputs;};}
+          inputs.nvf.nixosModules.default
           ./hosts/node/configuration.nix
         ];
       };

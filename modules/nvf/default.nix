@@ -4,7 +4,6 @@
   ...
 }: {
   imports = [
-    inputs.nvf.nixosModules.default
     ./options.nix
     ./languages.nix
     ./picker.nix
