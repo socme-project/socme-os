@@ -28,9 +28,7 @@ ssh, etc.)
 
 1. [Download](https://nixos.org/download/) and
    [install](https://nixos.wiki/wiki/NixOS_Installation_Guide) NixOS. During the
-   installation, create a user named `socme` as such :
-
-![setup](src/setup.png)
+   installation, create a user named `temp` as a temporary user for the installation.
 
 ### Installation script
 
