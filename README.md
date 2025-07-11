@@ -28,9 +28,7 @@ ssh, etc.)
 
 1. [Download](https://nixos.org/download/) and
    [install](https://nixos.wiki/wiki/NixOS_Installation_Guide) NixOS. During the
-   installation, create a user named `socme` as such :
-
-![setup](src/setup.png)
+   installation, create a user named `temp` as a temporary user for the installation.
 
 ### Installation script
 
@@ -66,3 +64,5 @@ sudo bash -c 'nixos-generate-config --show-hardware-config > /etc/nixos/hosts/<n
 ```sh
 sudo nixos-rebuild switch --flake /etc/nixos#<node|core>
 ```
+
+7. Reboot and login as `socme` with the `secret` password.

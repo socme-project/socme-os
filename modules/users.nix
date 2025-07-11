@@ -7,8 +7,8 @@
       home = "/home/socme";
       description = "SOCme account";
       extraGroups = [ "wheel" "networkmanager" "docker" ];
+      initialHashedPassword = "$6$I3RukNU8KP0Djt4L$d1lMuR7n.tcDIvUKscNYVrHnGnzpy.t2JZ4kfJYDs0iwVWIlJRd8uVI8eCuRw8HA2pBZJq4.Qylj/0Di3Wge11";
 
-      # OpenSOC public key
       openssh.authorizedKeys.keys = [
         "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIMGBTOOWuJQZc9qTNswozTYhje4eYFv2OOmuprZgnSDJ hadi@nixy"
       ];
