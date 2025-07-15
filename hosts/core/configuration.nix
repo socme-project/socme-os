@@ -21,7 +21,7 @@
   ];
 
   networking.hostName = "Core-Dev";
-  nginx = {
+  services.nginx = {
     security.acme = {
       acceptTerms = true;
       defaults.email = "socme@socme.com";
