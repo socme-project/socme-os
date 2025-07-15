@@ -21,20 +21,21 @@
   ];
 
   networking.hostName = "Core-Dev";
+  nginx = {
+    security.acme = {
+      acceptTerms = true;
+      defaults.email = "socme@socme.com";
+    };
 
-  security.acme = {
-    acceptTerms = true;
-    defaults.email = "socme@socme.com";
-  };
+    security.acme.certs."socme.wiki" = {
+      domain = "socme.wiki";
+      extraDomainNames = ["*.socme.wiki"];
+      group = "nginx";
 
-  security.acme.certs."socme.wiki" = {
-    domain = "socme.wiki";
-    extraDomainNames = ["*.socme.wiki"];
-    group = "nginx";
-
-    dnsProvider = "cloudflare";
-    dnsPropagationCheck = true;
-    credentialsFile = "/root/cloudflare.ini";
+      dnsProvider = "cloudflare";
+      dnsPropagationCheck = true;
+      credentialsFile = "/root/cloudflare.ini";
+    };
   };
 
   # Don't touch this
