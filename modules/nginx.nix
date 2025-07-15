@@ -6,6 +6,10 @@
 }: {
   services.nginx = {
     enable = true;
+
+    useACMEHost = "socme.wiki";
+    forceSSL = true;
+
     virtualHosts."dashboard.socme.wiki" = {
       root = "${
         inputs.socme.packages.${pkgs.system}.socme-frontend

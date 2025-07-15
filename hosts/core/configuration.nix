@@ -1,4 +1,4 @@
-{ ... }: {
+{...}: {
   imports = [
     ../../modules/firewall.nix
     ../../modules/global.nix
@@ -21,6 +21,21 @@
   ];
 
   networking.hostName = "Core-Dev";
+
+  security.acme = {
+    acceptTerms = true;
+    defaults.email = "socme@socme.com";
+  };
+
+  security.acme.certs."socme.wiki" = {
+    domain = "socme.wiki";
+    extraDomainNames = ["*.socme.wiki"];
+    group = "nginx";
+
+    dnsProvider = "cloudflare";
+    dnsPropagationCheck = true;
+    credentialsFile = "/root/cloudflare.ini";
+  };
 
   # Don't touch this
   system.stateVersion = "24.05";
