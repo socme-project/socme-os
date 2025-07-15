@@ -35,6 +35,11 @@ sudo nixos-generate-config --dir /tmp/nixos-config && sudo mv /tmp/nixos-config/
   exit 1
 }
 
+cd /etc/nixos && git add "./hosts/${type}/hardware-configuration.nix" || {
+  echo "Error: Failed to add hardware configuration to git." >&2
+  exit 1
+}
+
 echo "Rebuilding NixOS system..."
 sudo nix-shell -p git --run "nixos-rebuild switch --flake \"/etc/nixos#$type\"" || {
   echo "Error: Failed to rebuild NixOS system." >&2

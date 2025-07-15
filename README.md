@@ -1,7 +1,7 @@
 # SOCME-OS
 
 SOCME-OS is a submodule of SOCME, containing the NixOS configurations for both
-Node and Core. 
+Node and Core.
 
 To deploy the frontend, Core should have an x86-64-v3 architecture.
 
@@ -16,10 +16,8 @@ To deploy the frontend, Core should have an x86-64-v3 architecture.
 
 ### 💻 /hosts
 
-The directory contains host-specific configurations. Each host includes:
-
-- `configuration.nix` for system-wide settings
-- `hardware-configuration.nix` for hardware-specific settings
+The directory contains host-specific configurations. Each host includes a
+`configuration.nix` for settings.
 
 ### 📦 /modules
 
@@ -66,4 +64,5 @@ sudo bash -c 'nixos-generate-config --show-hardware-config > /etc/nixos/hosts/<n
 sudo nixos-rebuild switch --flake /etc/nixos#<node|core>
 ```
 
-If you did not create the user `socme` during installation, go to another tty and log in as `socme` with password `secret`.
+If you did not create the user `socme` during installation, go to another tty
+and log in as `socme` with password `secret`.
