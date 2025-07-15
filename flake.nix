@@ -24,6 +24,7 @@
         system = "x86_64-linux";
         modules = [
           {_module.args = {inherit inputs;};}
+          inputs.nvf.nixosModules.default
           inputs.socme.nixosModules.socme-backend
           ./hosts/core/configuration.nix
         ];

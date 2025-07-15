@@ -13,6 +13,7 @@
     ../../modules/nginx.nix
     ../../modules/socme.nix
     ../../modules/tailscale.nix
+    ../../modules/nvf
 
     #./headscale.nix
 
