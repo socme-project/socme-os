@@ -1,7 +1,7 @@
-{ config, ... }: {
+{config, ...}: {
   services.openssh = {
     enable = true;
-    ports = [ 22 ];
+    ports = [22];
     extraConfig = ''
       AllowTcpForwarding yes
       X11Forwarding no
@@ -11,10 +11,10 @@
     '';
     settings = {
       PasswordAuthentication = false;
-      AllowUsers = [ "core" ]; # or null for all users
+      AllowUsers = ["socme"]; # or null for all users
       PermitRootLogin = "no";
     };
   };
 
-  networking.firewall.allowedTCPPorts = [ 22 ];
+  networking.firewall.allowedTCPPorts = [22];
 }
