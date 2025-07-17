@@ -192,11 +192,11 @@
         "systems": "systems_3"
       },
       "locked": {
-        "lastModified": 1752760769,
-        "narHash": "sha256-eHemrF/8Zn4YwfqpeO1QsC4BEq9ABZKYtmh4bJnUlZk=",
+        "lastModified": 1752761354,
+        "narHash": "sha256-A6NGTrm/XG3eTuwjvu5O9eA435mWGpNUV+SlitzbpQc=",
         "owner": "socme-project",
         "repo": "socme",
-        "rev": "a3bed10d3e32b31dc657926c41dddb173c954a6f",
+        "rev": "17b1d2f0787180e964712d815a125898ac0627f9",
         "type": "github"
       },
       "original": {
