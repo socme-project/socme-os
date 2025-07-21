@@ -55,8 +55,7 @@ sudo rm -rf /etc/nixos && sudo git clone https://github.com/socme-project/socme-
 5. Exécutez la commande suivante pour ajouter la configuration matérielle de votre hôte :
 
 ```sh
-sudo bash -c 'nixos-generate-config --show-hardware-config > /etc/nixos/hosts/<node|core>/hardware-
-configuration.nix'
+sudo bash -c 'nixos-generate-config --show-hardware-config > /etc/nixos/hosts/<node|core>/hardware-configuration.nix'
 ```
 
 6. Construisez le système :
