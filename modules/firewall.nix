@@ -1,11 +1,12 @@
-_:
-let suricataInterface = "";
+_: let
+  suricataInterface = "";
 in {
   networking.firewall = {
     enable = true;
-    allowedTCPPorts = [ 443 ];
-    allowedUDPPortRanges = [ ];
+    allowedTCPPorts = [];
+    allowedUDPPortRanges = [];
 
+    # To enable Suricata, uncomment the following lines and set the interface
     # interfaces."${suricataInterface}" = {
     #   allowedUDPPortRanges = [{
     #     from = 0;

@@ -7,6 +7,7 @@
   services.nginx = {
     enable = true;
 
+    # This is the virtualHosts that will be used for the Socme frontend and backend
     virtualHosts."dashboard.socme.wiki" = {
       useACMEHost = "socme.wiki";
       forceSSL = true;

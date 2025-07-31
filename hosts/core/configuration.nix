@@ -15,8 +15,6 @@
     ../../modules/tailscale.nix
     ../../modules/nvf
 
-    #./headscale.nix
-
     ./hardware-configuration.nix
   ];
 
@@ -27,13 +25,14 @@
   };
 
   security.acme.certs."socme.wiki" = {
+    # This is used to generate SSL certificates
     domain = "socme.wiki";
     extraDomainNames = ["*.socme.wiki"];
     group = "nginx";
 
     dnsProvider = "cloudflare";
     dnsPropagationCheck = true;
-    credentialsFile = "/root/cloudflare.ini";
+    credentialsFile = "/root/cloudflare.ini"; # A path to your Cloudflare credentials file
   };
 
   # Don't touch this
